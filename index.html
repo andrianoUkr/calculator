@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="webApp" ng-controller="CalculatorCtrl">
+    <head>
+        <meta charset="UTF-8" />
+		<title>Web App on AngularJs</title>	
+		<link rel="stylesheet" href="styles/style.css" type="text/css" media="all"/>		
+        <script src="js/lib/angular.js"></script>  
+		<script src="js/main.js"></script>
+	</head>
+    <body>
+	<div id="body_wrapper"></div>
+		<div id="page_wrapper">
+			<div id="header" >HEADER</div>
+			<div id="left-sidebar">
+				<div id="menu">
+				</div>
+			</div>			
+			<div id="main">
+				<div id="calc">
+					<div id="display_calc">
+						<div class="display">{{number}}</div>
+						<div class="display">{{operation}}</div>
+						<div class="display" style="position: absolute; bottom: 0px; left: 7px;">{{memory}}</div>
+					</div>
+					<div id="buttons_calc">
+						<div>
+							<button class="operationBtn" ng-click="rememberAction('MR')">MR</button>
+							<button class="operationBtn" ng-click="rememberAction('MC')">MC</button>
+							<button class="operationBtn" ng-click="rememberAction('M+')">M+</button>
+							<button class="operationBtn" ng-click="rememberAction('M-')">M-</button>
+							<button class="operationBtn" ng-click="clearAction()">C</button>
+						</div>
+						<div>
+							<button class="operationBtn" ng-click="setNumber(7)" data-itm="7">7</button>
+							<button class="numberBtn" ng-click="setNumber(8)">8</button>
+							<button class="numberBtn" ng-click="setNumber(9)">9</button>
+							<button class="operationBtn" ng-click="setOperation('/')">&#247;</button>
+							<button class="operationBtn" ng-click="backAction()">&#8592;</button>
+						</div>
+						<div>
+							<button class="numberBtn" ng-click="setNumber(4)">4</button>
+							<button class="numberBtn" ng-click="setNumber(5)">5</button>
+							<button class="numberBtn" ng-click="setNumber(6)">6</button>
+							<button class="operationBtn" ng-click="setOperation('*')">&#215;</button>
+							<button class="operationBtn" ng-click="percentAction()">%</button>
+						</div>
+						<div>
+							<button class="numberBtn" ng-click="setNumber(1)">1</button>
+							<button class="numberBtn" ng-click="setNumber(2)">2</button>
+							<button class="numberBtn" ng-click="setNumber(3)">3</button>
+							<button class="operationBtn" ng-click="setOperation('-')">&#8722;</button>
+							<button class="operationBtn double_vertic" ng-click="setOperation('=')">=</button>
+						</div>
+						<div>
+							<button class="numberBtn double_horiz" ng-click="setNumber(0)">0</button>
+							<button class="numberBtn" ng-click="decimalAction()">.</button>
+							<button class="operationBtn" ng-click="setOperation('+')">+</button>
+						</div>
+					</div>
+				</div>
+			
+			</div>		
+		
+		</div>
+					<div id="footer" >FOOTER</div>
+		<div id="loader_wrapper">
+			<div id="loader"></div>
+		</div>
+	
+    </body>
+</html>
